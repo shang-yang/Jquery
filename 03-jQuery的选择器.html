@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的选择器</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <script>
+        // id选择器
+        function testId() {
+            //jquery--id
+            let inp = $("#uname");
+            alert(inp.val());
+        }
+        // 标签选择器
+        function testEle() {
+            let inps = $("input");
+            alert(inps.length)
+        }
+        // 类选择器
+        function testClass() {
+            let inp = $(".common");
+            alert(inp.val())
+        }
+        // 组合选择器
+        function testAll() {
+            let eles = $("h3,input");
+            alert(eles.length);
+        }
+        // 子选择器
+        function testChild() {
+            let inps = $("#showdiv>input");
+            alert(inps.length);
+        }
+        // 层级选择器
+        function testCj() {
+            let inp = $("input:first");
+            alert(inp.val());
+        }
+        // 层级选择器2
+        function testCj2() {
+            let tds = $("td:not(td[width])");
+            alert(tds.html());
+        }
+    </script>
+    <style>
+        div{
+            width: 600px;
+            height: 100px;
+            border: solid 2px orange;
+        }
+    </style>
+</head>
+<body>
+    <h3>jquery的选择器</h3>
+    <input type="button" value="测试id选择器" onclick="testId()">
+    <input type="button" value="测试标签选择器" onclick="testEle()">
+    <input type="button" value="测试类选择器" onclick="testClass()">
+    <input type="button" value="测试组合选择器" onclick="testAll()">
+    <hr>
+    用户名：<input type="text" class="common" id="uname" value="">
+    <hr>
+    <input type="button" value="测试子选择器" onclick="testChild()">
+    <input type="button" value="测试层级选择器" onclick="testCj()">
+    <input type="button" value="测试层级选择器2" onclick="testCj2()">
+    <hr>
+    <div id="showdiv">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+    </div>
+    <div id="showdiv1">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+        <input type="text" name="" value="">
+    </div>
+    <table border="1px" height="200px">
+        <tr>
+            <td width="100px"></td>
+            <td width="100px"></td>
+            <td width="100px"></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+
+    </table>
+</body>
+</html>

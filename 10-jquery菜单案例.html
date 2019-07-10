@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单案例</title>
+    <style>
+        ul li{
+            list-style-type: none;
+        }
+        #na{
+            position: relative;
+            left: 20px;
+        }
+
+    </style>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        let flag = true;
+        // function testNa() {
+        //     // $("#na").toggle(1000);
+        //     if (flag) {
+        //         $("#naImg").attr("alt", "img");
+        //         $("#na").slideUp(1000);
+        //         flag = false;
+        //     } else {
+        //         $("#naImg").attr("alt", "imga");
+        //         $("#na").slideDown(1000);
+        //         flag = true;
+        //     }
+        // }
+
+        // 页面载入
+        $(function () {
+            $("ul>label").bind("mouseover",function () {
+                // $("#na").toggle(1000);
+                // if (!flag) {
+                //     $("#naImg").attr("alt", "img");
+                //     $("#na").slideUp(1000);
+                //     flag = false;
+                // } else {
+                    $("#naImg").attr("alt", "imga");
+                    $("#na").slideDown(1000);
+                 //   flag = true;
+                // }
+            })
+            $("ul>label").bind("mouseout",function () {
+                // $("#na").toggle(1000);
+                //if (flag) {
+                    $("#naImg").attr("alt", "img");
+                    $("#na").slideUp(1000);
+                  //  flag = false;
+                // } else {
+                //     $("#naImg").attr("alt", "imga");
+                //     $("#na").slideDown(1000);
+                //     flag = true;
+                // }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h3>jQuery-菜单案例</h3>
+    <hr>
+    <ul>
+        <img src="img/open.png" id="naImg" alt="1">&nbsp;&nbsp;<label>国际动态</label>
+        <div id="na">
+            <li><img src="img/open.png" alt="2"><label>国内新闻</label></li>
+            <li><img src="img/open.png" alt="3"><label>国际新闻</label></li>
+        </div>
+    </ul>
+</body>
+</html>

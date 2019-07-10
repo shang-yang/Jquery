@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery操作文档结构</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <script>
+        // 内部插入
+        function testAppend() {
+            let div = $("#showdiv");
+            div.append("<i>一起快乐</i>");
+        }
+        function testAppendTo() {
+            let div = $("#showdiv");
+            $("#u1").appendTo(div);
+        }
+        function testPrepend() {
+            let div = $("#showdiv");
+            div.prepend("<i>乌啦啦</i>")
+        }
+
+
+        // 外部插入
+        function testAfter() {
+            let div=$("#showdiv")
+            div.after("<b>今天天气好好</b>")
+        }
+        function testBefore() {
+            let div = $("#showdiv");
+            div.before("<b>今天天气好好</b>")
+        }
+
+        // 删除
+        function testEmpty() {
+            let div = $("#showdiv");
+            div.empty();
+        }
+    </script>
+    <style>
+        #showdiv{
+            width: 300px;
+            height: 300px;
+            border: solid 1px orange;
+        }
+    </style>
+</head>
+<body>
+    <h3>jquery操作文档结构</h3>
+    <input type="button" value="测试append" onclick="testAppend()">
+    <input type="button" value="测试appendTo" onclick="testAppendTo()">
+    <input type="button" value="测试Prepend" onclick="testPrepend()">
+    <hr>
+    <input type="button" value="测试After" onclick="testAfter()">
+    <input type="button" value="测试Before" onclick="testBefore()">
+    <input type="button" value="测试empty" onclick="testEmpty()">
+    <hr>
+    <u id="u1">快乐到飞起</u>
+    <div id="showdiv">
+        <b>快乐</b>
+    </div>
+</body>
+</html>

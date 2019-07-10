@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery操作事件</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <script>
+        // js动态添加事件
+        function testThing() {
+            let btn = document.getElementById("btn");
+            // 添加事件
+            btn.onclick=function () {
+                alert("我是js事件");
+            }
+        }
+
+        function testBind() {
+            $("#btn2").bind("click",function () {
+                alert("我是bind绑定单击事件");
+            })
+        }
+        function testUnBind() {
+            $("#btn2").unbind("click");
+        }
+
+        function testOne() {
+            $("#btn3").one("click",function () {
+                alert("我是one");
+            })
+        }
+
+        // js方式，会覆盖
+        window.onload = function () {
+            alert("页面载入");
+        }
+        // jquery方式，不会覆盖
+        $(document).ready(function () {
+            alert("jquery页面载入");
+        })
+
+    </script>
+</head>
+<body>
+    <h3>jquery操作事件</h3>
+    <input type="button" value="测试js动态添加事件" onclick="testThing()">
+    <input type="button" value="测试jquery动态添加事件--bind" onclick="testBind()">
+    <input type="button" value="测试jquery动态解绑事件--unbind" onclick="testUnBind()">
+    <input type="button" value="测试jquery动态解绑事件--one" onclick="testOne()">
+    <hr>
+    <input type="button" id="btn" value="测试js">
+    <input type="button" id="btn2" value="测试jquery">
+    <input type="button" id="btn3" value="测试jquery">
+
+</body>
+</html>

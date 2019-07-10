@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery操作元素属性</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <script>
+        function testField() {
+            // 获取元素对象
+            let uname = $("#uname");
+            // 获取
+            alert(uname.attr("type")+":"+uname.val())
+        }
+        function testField2() {
+            // 获取元素对象
+            let uname = $("#uname");
+            uname.attr("type","button")
+        }
+    </script>
+</head>
+<body>
+    <h3>jquery操作元素属性</h3>
+    <input type="button" value="测试获取元素属性" onclick="testField()">
+    <input type="button" value="测试获取元素属性" onclick="testField2()">
+    <hr>
+    用户名：<input type="text" name="uname" id="uname" value="哈哈" />
+</body>
+</html>

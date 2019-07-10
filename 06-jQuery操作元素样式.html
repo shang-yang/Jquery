@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery操作元素样式</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <style>
+        #showdiv{
+            width: 300px;
+            height: 300px;
+            border: solid 1px;
+        }
+        .common{
+            width: 300px;
+            height: 300px;
+            border: solid 1px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        function testCss() {
+            let showdiv = $("#showdiv");
+            // 操作样式--增加
+            showdiv.css("background-color","orange");
+            alert(showdiv.css("width"));
+        }
+        let sty = {
+            "border":"solid 1px",
+            "width":"300px",
+            "height":"300px"
+        }
+        function testCss2() {
+            let div = $("#div01");
+            div.css(sty);
+        }
+
+        // jQuery操作样式--addClass()
+        function testAddClass() {
+            // 获取元素对象
+            let div = $("#div01");
+            div.addClass("common");
+        }
+        function testRemoveClass() {
+            let div = $("#div01");
+            div.removeClass("common");
+        }
+    </script>
+</head>
+<body>
+    <h3>操作元素样式</h3>
+    <input type="button" value="操作样式--css()" onclick="testCss()">
+    <input type="button" value="操作样式--css()-json" onclick="testCss2()">
+    <input type="button" value="操作样式--addClass()" onclick="testAddClass()">
+    <input type="button" value="操作样式--removeClass()" onclick="testRemoveClass()">
+    <hr>
+    <div id="showdiv">
+
+    </div>
+    <div id="div01"></div>
+</body>
+</html>

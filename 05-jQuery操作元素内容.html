@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery操作元素的内容</title>
+    <script src="js/jquery-3.4.1.js" charset="UTF-8"></script>
+    <script>
+        // 声明函数
+        function testHtml() {
+            // 获取元素对象
+            let showdiv = $("#showdiv");
+            // 获取元素的内容
+            alert(showdiv.html());
+        }
+
+        function testHtml2() {
+            let showdiv = $("#showdiv");
+            showdiv.html("<b>哈哈</b>");
+        }
+
+        function testText() {
+            let showdiv = $("#showdiv");
+            alert(showdiv.text());
+        }
+
+        function testText2() {
+            let showdiv = $("#showdiv");
+            showdiv.text("<i>测试测试</i>");
+        }
+
+    </script>
+</head>
+<body>
+    <h3>jquery操作元素的内容</h3>
+    <input type="button" name="" value="测试获取元素内容--html()" onclick="testHtml()" />
+    <input type="button" name="" value="测试修改元素内容--html()" onclick="testHtml2()" />
+    <input type="button" name="" value="测试获取元素内容--text()" onclick="testText()" />
+    <input type="button" name="" value="测试修改元素内容--text()" onclick="testText2()" />
+    <hr>
+    <div id="showdiv">
+        <b>乌啦啦啦啦啦</b>
+    </div>
+</body>
+</html>
